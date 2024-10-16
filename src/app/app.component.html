@@ -9,6 +9,7 @@
             [(ngModel)]="city"
             placeholder="Enter a city"
             (keyup)="searchCity()" 
+            autofocus
           />
           <ng-container *ngIf="weatherByCity?.length">
             it is {{ weatherByCity[0].current.condition.text | titlecase }}
@@ -59,6 +60,7 @@
             [(ngModel)]="city"
             placeholder="Enter a city"
             (keyup)="searchCity()" 
+            autofocus
           />
           <ng-container *ngIf="weatherByCity?.length">
             it is {{ weatherByCity[0].current.condition.text | titlecase }}
