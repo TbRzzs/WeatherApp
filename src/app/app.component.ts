@@ -5,7 +5,7 @@ import { ServiciosService } from './servicios.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],  // Corrección del nombre del archivo a styleUrls
 })
 export class AppComponent implements OnInit {
   city: string = '';
@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
   }
 
   searchCity(): void {
-    if (this.city) {
+    if (this.city.length >= 3) {
       this.getWeatherByCity(this.city);
     }
   }

@@ -1,110 +1,113 @@
 <div class="container">
-  @if (celsius){ @for ( cities of weatherByCity ; track $index) {
-  <div class="text-tittle-city-container">
-    <span class="text-tittle-city">
-      Currently in
-      <input
-        type="text"
-        [(ngModel)]="city"
-        placeholder="Enter a city"
-        (keyup.enter)="searchCity()"
-      />
-      <ng-container *ngIf="weatherByCity?.length">
-        it is {{ weatherByCity[0].current.condition.text | titlecase}}
-      </ng-container>
-    </span>
-  </div>
-  <div class="card">
-    <img [src]="cities.current.condition.icon" alt="Weather Icon" />
-    <p class="temperature">{{ cities.current.temp_c }} °C</p>
-    <div class="line">
-      <p>
-        <span><i class="fa-solid fa-wind"></i></span>
-        {{ cities.current.wind_mph }} mph
-      </p>
-      <p class="humidity">
-        <span><i class="fa-solid fa-droplet"></i></span
-        >{{ cities.current.humidity }} %
-      </p>
-    </div>
-  </div>
-  <div class="footer-icons">
-    <span>
-      <i class="fa-solid fa-child"></i>
-      {{ cities.current.feelslike_c }}°C
-    </span>
-
-    <span>
-      <i class="fa-solid fa-cloud"></i>
-      {{ cities.current.cloud}}
-    </span>
-    <span>
-      <i class="fa-solid fa-sun"></i>
-      {{ cities.current.uv }}
-    </span>
-    <span>
-      <i class="fa-brands fa-cloudversify"></i>
-      {{ cities.current.gust_kph }} mph
-    </span>
-  </div>
-  } } @if (farenheit) { @for ( cities of weatherByCity ; track $index) {
-  <div class="text-tittle-city-container">
-    <span class="text-tittle-city">
-      Currently in
-      <input
-        type="text"
-        [(ngModel)]="city"
-        placeholder="Enter a city"
-        (keypress)="searchCity()"
-      />
-      <ng-container *ngIf="weatherByCity?.length">
-        it is {{ weatherByCity[0].current.condition.text | titlecase}}
-      </ng-container>
-    </span>
-  </div>
-  <div class="card">
-    <img [src]="cities.current.condition.icon" alt="Weather Icon" />
-    <p class="temperature">{{ cities.current.temp_f }} °F</p>
-    <div class="line">
-      <p>
-        <span><i class="fa-solid fa-wind"></i></span>
-        {{ cities.current.wind_kph }} kph
-      </p>
-      <p class="humidity">
-        <span><i class="fa-solid fa-droplet"></i></span
-        >{{ cities.current.humidity }} %
-      </p>
-    </div>
-  </div>
-  <div class="footer-icons">
-    <span>
-        <i class="fa-solid fa-child"></i>
-        {{ cities.current.feelslike_f }}°F
-      </span>
-  
-      <span>
-        <i class="fa-solid fa-cloud"></i>
-        {{ cities.current.cloud}}
-      </span>
-      <span>
-        <i class="fa-solid fa-sun"></i>
-        {{ cities.current.uv }}
-      </span>
-      <span>
-        <i class="fa-brands fa-cloudversify"></i>
-       {{ cities.current.gust_kph }} kph
-      </span>
-  </div>
-  } }
+  @if (celsius) { 
+    @for (cities of weatherByCity; track $index) {
+      <div class="text-tittle-city-container">
+        <span class="text-tittle-city">
+          Currently in
+          <input
+            type="text"
+            [(ngModel)]="city"
+            placeholder="Enter a city"
+            (keyup)="searchCity()" 
+          />
+          <ng-container *ngIf="weatherByCity?.length">
+            it is {{ weatherByCity[0].current.condition.text | titlecase }}
+          </ng-container>
+        </span>
+      </div>
+      <div class="card">
+        <img [src]="cities.current.condition.icon" alt="Weather Icon" />
+        <p class="temperature">{{ cities.current.temp_c }} °C</p>
+        <div class="line">
+          <p>
+            <span><i class="fa-solid fa-wind"></i></span>
+            {{ cities.current.wind_mph }} mph
+          </p>
+          <p class="humidity">
+            <span><i class="fa-solid fa-droplet"></i></span>
+            {{ cities.current.humidity }} %
+          </p>
+        </div>
+      </div>
+      <div class="footer-icons">
+        <span>
+          <i class="fa-solid fa-child"></i>
+          {{ cities.current.feelslike_c }}°C
+        </span>
+        <span>
+          <i class="fa-solid fa-cloud"></i>
+          {{ cities.current.cloud }}
+        </span>
+        <span>
+          <i class="fa-solid fa-sun"></i>
+          {{ cities.current.uv }}
+        </span>
+        <span>
+          <i class="fa-brands fa-cloudversify"></i>
+          {{ cities.current.gust_kph }} mph
+        </span>
+      </div>
+    } 
+  } 
+  @if (farenheit) { 
+    @for (cities of weatherByCity; track $index) {
+      <div class="text-tittle-city-container">
+        <span class="text-tittle-city">
+          Currently in
+          <input
+            type="text"
+            [(ngModel)]="city"
+            placeholder="Enter a city"
+            (keyup)="searchCity()" 
+          />
+          <ng-container *ngIf="weatherByCity?.length">
+            it is {{ weatherByCity[0].current.condition.text | titlecase }}
+          </ng-container>
+        </span>
+      </div>
+      <div class="card">
+        <img [src]="cities.current.condition.icon" alt="Weather Icon" />
+        <p class="temperature">{{ cities.current.temp_f }} °F</p>
+        <div class="line">
+          <p>
+            <span><i class="fa-solid fa-wind"></i></span>
+            {{ cities.current.wind_kph }} kph
+          </p>
+          <p class="humidity">
+            <span><i class="fa-solid fa-droplet"></i></span>
+            {{ cities.current.humidity }} %
+          </p>
+        </div>
+      </div>
+      <div class="footer-icons">
+        <span>
+          <i class="fa-solid fa-child"></i>
+          {{ cities.current.feelslike_f }}°F
+        </span>
+        <span>
+          <i class="fa-solid fa-cloud"></i>
+          {{ cities.current.cloud }}
+        </span>
+        <span>
+          <i class="fa-solid fa-sun"></i>
+          {{ cities.current.uv }}
+        </span>
+        <span>
+          <i class="fa-brands fa-cloudversify"></i>
+          {{ cities.current.gust_kph }} kph
+        </span>
+      </div>
+    } 
+  }
   <div class="footer">
     <button class="celsius" (click)="celsius = true; farenheit = false">
       °C
     </button>
     
     <p>|</p>
+    
     <button class="fahrenheit" (click)="farenheit = true; celsius = false">
       °F
     </button>
   </div>
 </div>
-
