@@ -17,9 +17,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.city === '') {
-      this.city = 'Bogotá';
+      this.city = 'Lima';
     }
     this.getWeatherByCity(this.city);
+    console.log(this.weatherByCity);
   }
 
   getWeatherByCity(city: string): void {

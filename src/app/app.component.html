@@ -35,16 +35,16 @@
     </span>
 
     <span>
-      <i class="fa-solid fa-temperature-arrow-down"></i>
-      {{ cities.current.windchill_c }}°C
+      <i class="fa-solid fa-cloud"></i>
+      {{ cities.current.cloud}}
     </span>
     <span>
-      <i class="fa-solid fa-temperature-arrow-up"></i>
-      {{ cities.current.heatindex_c }}°C
+      <i class="fa-solid fa-sun"></i>
+      {{ cities.current.uv }}
     </span>
     <span>
-      <i class="fa-brands fa-drupal"></i>
-      {{ cities.current.dewpoint_c }}°C
+      <i class="fa-brands fa-cloudversify"></i>
+      {{ cities.current.gust_kph }} mph
     </span>
   </div>
   } } @if (farenheit) { @for ( cities of weatherByCity ; track $index) {
@@ -58,7 +58,7 @@
         (keypress)="searchCity()"
       />
       <ng-container *ngIf="weatherByCity?.length">
-        it is{{ weatherByCity[0].current.condition.text | titlecase}}
+        it is {{ weatherByCity[0].current.condition.text | titlecase}}
       </ng-container>
     </span>
   </div>
@@ -68,7 +68,7 @@
     <div class="line">
       <p>
         <span><i class="fa-solid fa-wind"></i></span>
-        {{ cities.current.wind_mph }} mph
+        {{ cities.current.wind_kph }} kph
       </p>
       <p class="humidity">
         <span><i class="fa-solid fa-droplet"></i></span
@@ -83,26 +83,27 @@
       </span>
   
       <span>
-        <i class="fa-solid fa-temperature-arrow-down"></i>
-        {{ cities.current.windchill_f }}°F
+        <i class="fa-solid fa-cloud"></i>
+        {{ cities.current.cloud}}
       </span>
       <span>
-        <i class="fa-solid fa-temperature-arrow-up"></i>
-        {{ cities.current.heatindex_f }}°F
+        <i class="fa-solid fa-sun"></i>
+        {{ cities.current.uv }}
       </span>
       <span>
-        <i class="fa-brands fa-drupal"></i>
-        {{ cities.current.dewpoint_f }}°F
+        <i class="fa-brands fa-cloudversify"></i>
+       {{ cities.current.gust_kph }} kph
       </span>
   </div>
   } }
   <div class="footer">
-    <button class="fahrenheit" (click)="farenheit = true; celsius = false">
-      °F
-    </button>
-    <p>|</p>
     <button class="celsius" (click)="celsius = true; farenheit = false">
       °C
+    </button>
+    
+    <p>|</p>
+    <button class="fahrenheit" (click)="farenheit = true; celsius = false">
+      °F
     </button>
   </div>
 </div>

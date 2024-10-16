@@ -15,15 +15,15 @@ export interface AllWeather {
     temp_f: number;
     condition: Condition;
     wind_mph: number;
+    wind_kph: number;
     humidity: number;
+    cloud: number; 
     feelslike_c: number;
     feelslike_f: number;
-    windchill_c: number;
-    windchill_f: number;
-    heatindex_c: number;
-    heatindex_f: number;
-    dewpoint_c: number;
-    dewpoint_f: number;
+    uv: number; 
+    gust_kph: number;
+    gust_mph: number;
+
   }
   
   export interface Condition {
