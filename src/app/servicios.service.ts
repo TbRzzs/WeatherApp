@@ -8,7 +8,7 @@ import { environment } from '../environments/environment';
   providedIn: 'root',
 })
 export class ServiciosService {
-  private WeatherApi = 'http://api.weatherapi.com/v1/current.json?key=';
+  private WeatherApi = 'https://api.weatherapi.com/v1/current.json?key=';
 
   constructor(private http: HttpClient) {}
 
