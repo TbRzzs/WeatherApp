@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { AllWeather } from './models/wheater.models';
 import { ServiciosService } from './servicios.service';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],  // Corrección del nombre del archivo a styleUrls
+  styleUrls: ['./app.component.css'], 
 })
 export class AppComponent implements OnInit {
   city: string = '';
   weatherByCity: AllWeather[] = [];
   farenheit: boolean = false;
   celsius: boolean = true;
+  cityInput$: Subject<string> = new Subject<string>();
 
   constructor(private servicios: ServiciosService) {}
 
@@ -20,6 +23,14 @@ export class AppComponent implements OnInit {
       this.city = 'Lima';
     }
     this.getWeatherByCity(this.city);
+
+    this.cityInput$
+      .pipe(debounceTime(1000))  
+      .subscribe((city) => {
+        if (city.length >= 3) {
+          this.getWeatherByCity(city);
+        }
+      });
   }
 
   getWeatherByCity(city: string): void {
@@ -34,8 +45,6 @@ export class AppComponent implements OnInit {
   }
 
   searchCity(): void {
-    if (this.city.length >= 3) {
-      this.getWeatherByCity(this.city);
-    }
+    this.cityInput$.next(this.city);
   }
 }

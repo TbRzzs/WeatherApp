@@ -1,132 +1,204 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #fff;
-    font-family: "Alumni Sans Pinstripe", sans-serif;
-    font-size: 50px;
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  font-size: 50px;
 }
 
 .text-tittle-city {
-    font-size: 50px;
-    font-weight: bold;
-    margin-bottom: 20px;
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 input {
-    padding: 8px;
-    width: 180px;
-    border: none;
-    margin-left: 10px;
-    font-size: 50px;
-    text-align: center;
-    font-weight: bold;
-    font-family: "Alumni Sans Pinstripe", sans-serif;
+  padding: 8px;
+  width: 180px;
+  border: none;
+  margin-left: 10px;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Alumni Sans Pinstripe", sans-serif;
 }
 
 input:focus {
-    outline: none; 
-    border-bottom: 1px solid #000; 
+  outline: none;
+  border-bottom: 1px solid #000;
 }
 
 input::placeholder {
-    color: #f2f2f2;
-    text-align: center;
-}
-
-span    {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #979797;
-}
-.text-tittle-city-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 5px; 
-    margin-bottom: 20px;
-    width: 600px;
-    gap: 35px;
-}
-
-.card img {
-    width: 150px;
-    height: 150px;
-}
-
-.temperature {
-    font-size: 90px;
-    font-weight: bold;
-}
-
-.fa-droplet {
-    margin-right: 20px;
+  color: #f2f2f2;
+  text-align: center;
 }
 
 span {
-    font-size: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #979797;
+}
+
+.text-tittle-city-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 600px;
+  gap: 35px;
+}
+
+.card img {
+  object-fit: cover;
+}
+
+.temperature {
+  font-size: 90px;
+  font-weight: bold;
+}
+
+.fa-droplet {
+  margin-right: 20px;
+}
+
+span {
+  font-size: 30px;
 }
 
 .footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
 }
 
 button {
-    background-color: #fff;
-    border: none;
-    cursor: pointer;
-}
-.fahrenheit {
-    font-size: 40px;
-    font-weight: bold;
-    font-family: "Alumni Sans Pinstripe", sans-serif;
-    margin-right: 10px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
+.fahrenheit,
 .celsius {
-    font-size: 40px;
-    font-weight: bold;
-    font-family: "Alumni Sans Pinstripe", sans-serif;
-    margin-right: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+  margin-right: 10px;
 }
 
-.footer-icons  {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-
-    margin-top: 40px;
+.footer-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
 }
 
 .footer-icons span {
-    font-size: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-icons span i {
-    font-size: 40px;
+  font-size: 40px;
 }
 
+@media (max-width: 760px) {
+  .container {
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 300px;
+    overflow: hidden;
+  }
+
+  .text-tittle-city {
+    font-size: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 300px;
+  }
+  input {
+    padding: 2px;
+    width: 80px;
+    border: none;
+    margin-left: 10px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Alumni Sans Pinstripe", sans-serif;
+  }
+
+  span i {
+    font-size: 20px;
+  }
+
+  .temperature {
+    font-size: 30px;
+  }
+  .line {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 30px;
+  }
+
+  .line p {
+    margin: 0;
+  }
+
+  .line i {
+    font-size: 20px;
+    margin-right: 5px;
+  }
+
+  .humidity {
+    font-size: 30px;
+  }
+
+  .card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .footer-icons span {
+    font-size: 20px;
+  }
+
+  .footer-icons span i {
+    font-size: 30px;
+  }
+
+  .footer {
+    align-items: center;
+  }
+
+  .footer-icons {
+    gap: 30px;
+  }
+  .footer p {
+    font-size: 30px;
+  }
+}
