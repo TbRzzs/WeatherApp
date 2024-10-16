@@ -20,7 +20,6 @@ export class AppComponent implements OnInit {
       this.city = 'Lima';
     }
     this.getWeatherByCity(this.city);
-    console.log(this.weatherByCity);
   }
 
   getWeatherByCity(city: string): void {
