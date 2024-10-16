@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     this.getWeatherByCity(this.city);
 
     this.cityInput$
-      .pipe(debounceTime(1000))  
+      .pipe(debounceTime(600))  
       .subscribe((city) => {
         if (city.length >= 3) {
           this.getWeatherByCity(city);
